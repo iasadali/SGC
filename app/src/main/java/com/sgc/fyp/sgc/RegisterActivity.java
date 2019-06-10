@@ -1,5 +1,6 @@
 package com.sgc.fyp.sgc;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -148,7 +149,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
-        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+        startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
         finish();
     }
     private boolean isEmailValid(String email) {

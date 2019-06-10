@@ -111,7 +111,7 @@ public class LoginActivity extends AppCompatActivity {
                     showErrorDialog("There was a problem signing in ");
                 }
                 else {
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
                     finish();
                 }
@@ -134,24 +134,9 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
-        new AlertDialog.Builder(this)
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle("Exit SGC APP")
-                .setMessage("Are you sure you want to exit?")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i ) {
-                        Toast.makeText(context,"Thanks for not Closing " , Toast.LENGTH_LONG).show();
-                    }
-                })
-                .show();
-
+        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
 

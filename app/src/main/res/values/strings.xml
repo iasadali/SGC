@@ -59,4 +59,5 @@
     <string name="title_activity_qrcode_scanner">QR Code Scanner</string>
     <string name="title_activity_help">Help</string>
     <string name="title_activity_aboutus">About us</string>
+    <string name="copy_right" translatable="false">Copyrights © %1$d</string>
 </resources>

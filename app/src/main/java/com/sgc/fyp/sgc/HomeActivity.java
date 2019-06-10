@@ -1,5 +1,8 @@
 package com.sgc.fyp.sgc;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,12 +18,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.widget.Gallery;
+import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawer;
     NavigationView navigationView;
     Toolbar toolbar = null;
+    Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +47,7 @@ public class HomeActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        context=this;
     }
 
     @Override
@@ -50,7 +56,24 @@ public class HomeActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            new AlertDialog.Builder(this)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setTitle("Exit SGC APP")
+                    .setMessage("Are you sure you want to exit?")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    })
+                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i ) {
+                            Toast.makeText(context,"Thanks for not Closing " , Toast.LENGTH_LONG).show();
+                        }
+                    })
+                    .show();
+
         }
     }
 
@@ -115,9 +138,23 @@ public class HomeActivity extends AppCompatActivity
                 finish();
                 break;
             case R.id.nav_Exit:
-                Intent v = new Intent(HomeActivity.this, HomeActivity.class);
-                startActivity(v);
-                finish();
+                new AlertDialog.Builder(this)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setTitle("Exit SGC APP")
+                        .setMessage("Are you sure you want to exit?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i ) {
+                                Toast.makeText(context,"Thanks for not Closing " , Toast.LENGTH_LONG).show();
+                            }
+                        })
+                        .show();
                 break;
             case R.id.nav_help:
                 Intent w = new Intent(HomeActivity.this, Help.class);
@@ -134,4 +171,5 @@ public class HomeActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
