@@ -8,20 +8,32 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Layout;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 
 public class SplashActivity extends AppCompatActivity {
-    AnimationDrawable animationDrawable;
-    RelativeLayout relativeLayout;
+
     private static int Splash_time_out = 5000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE
+                        // Set the content to appear under the system bars so that the
+                        // content doesn't resize when the system bars hide and show.
+                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        // Hide the nav bar and status bar
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN);
+
         new Handler().postDelayed(new Runnable(){
 
             @Override
@@ -34,24 +46,7 @@ public class SplashActivity extends AppCompatActivity {
 
 
         }, Splash_time_out);
-        relativeLayout = findViewById(R.id.relativeLayout);
-        animationDrawable = (AnimationDrawable) relativeLayout.getBackground();
-        animationDrawable.setEnterFadeDuration(4000);
-        animationDrawable.setExitFadeDuration(4000);
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (animationDrawable != null && !animationDrawable.isRunning())
-            animationDrawable.start();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if (animationDrawable != null && animationDrawable.isRunning())
-            animationDrawable.stop();
     }
 
     @Override

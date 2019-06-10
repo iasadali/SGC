@@ -14,7 +14,6 @@
     android:paddingLeft="20dp"
     android:paddingRight="20dp">
     <TextView
-        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/generate"
@@ -23,7 +22,6 @@
         android:textSize="30sp"
         android:layout_marginBottom="200dp"/>
     <Button
-        android:id="@+id/generate_plaintext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="?android:textAppearanceMedium"
@@ -33,7 +31,6 @@
         android:textStyle="bold"
         android:onClick="GeneratePlaintext"/>
     <Button
-        android:id="@+id/generate_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="?android:textAppearanceMedium"
@@ -44,7 +41,6 @@
         android:onClick="GenerateImage"
         android:layout_marginTop="10dp"/>
     <Button
-        android:id="@+id/generate_audio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="?android:textAppearanceMedium"
@@ -55,7 +51,6 @@
         android:onClick="GenerateAudio"
         android:layout_marginTop="10dp"/>
     <Button
-        android:id="@+id/generate_video"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="?android:textAppearanceMedium"

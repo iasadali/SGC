@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -30,26 +31,33 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
     AnimationDrawable animationDrawable;
-    LinearLayout linearLayout;
+    RelativeLayout mRelativeLayout;
     Context context;
     private FirebaseAuth mAuth;
     // UI references.
-    private AutoCompleteTextView mEmailView;
-    private EditText mPasswordView;
-
+    EditText pswd,usrusr;
+    TextView sup,lin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        linearLayout = findViewById(R.id.linearLayout);
-        animationDrawable = (AnimationDrawable) linearLayout.getBackground();
+        lin = (TextView) findViewById(R.id.lin);
+        usrusr = (EditText) findViewById(R.id.usrusr);
+        pswd = (EditText) findViewById(R.id.pswrdd);
+        sup = (TextView) findViewById(R.id.sup);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/LatoLight.ttf");
+        Typeface custom_font1 = Typeface.createFromAsset(getAssets(), "fonts/LatoRegular.ttf");
+        lin.setTypeface(custom_font1);
+        sup.setTypeface(custom_font);
+        usrusr.setTypeface(custom_font);
+        pswd.setTypeface(custom_font);
+        mRelativeLayout = findViewById(R.id.relativeLayout);
+        animationDrawable = (AnimationDrawable) mRelativeLayout.getBackground();
         animationDrawable.setEnterFadeDuration(5000);
         animationDrawable.setExitFadeDuration(2000);
         context=this;
-        mEmailView = findViewById(R.id.login_email);
-        mPasswordView = findViewById(R.id.login_password);
 
-        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        pswd.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == R.integer.login || id == EditorInfo.IME_NULL) {
@@ -88,8 +96,8 @@ public class LoginActivity extends AppCompatActivity {
     }
     //the attemptLogin() method
     private void attemptLogin() {
-        String email = mEmailView.getText().toString();
-        String password = mPasswordView.getText().toString();
+        String email = usrusr.getText().toString();
+        String password = pswd.getText().toString();
 
         if (email.equals("") || password.equals("")) return;
         Toast.makeText(this, "Login in Progress...",Toast.LENGTH_SHORT ).show();
@@ -115,34 +123,34 @@ public class LoginActivity extends AppCompatActivity {
 
     // Show error on screen with an alert dialog
     private void showErrorDialog(String message){
-       new AlertDialog.Builder(this)
-               .setTitle("Oops")
-               .setMessage(message)
-               .setPositiveButton(android.R.string.ok,null)
-               .setIcon(android.R.drawable.ic_dialog_alert)
-               .show();
+        new AlertDialog.Builder(this)
+                .setTitle("Oops")
+                .setMessage(message)
+                .setPositiveButton(android.R.string.ok,null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
-       new AlertDialog.Builder(this)
-               .setIcon(android.R.drawable.ic_dialog_alert)
-               .setTitle("Exit SGC APP")
-               .setMessage("Are you sure you want to exit?")
-               .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                   @Override
-                   public void onClick(DialogInterface dialog, int which) {
-                       finish();
-                   }
-               })
-               .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                   @Override
-                   public void onClick(DialogInterface dialogInterface, int i ) {
-                       Toast.makeText(context,"Thanks for not Closing " , Toast.LENGTH_LONG).show();
-                   }
-               })
-               .show();
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Exit SGC APP")
+                .setMessage("Are you sure you want to exit?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i ) {
+                        Toast.makeText(context,"Thanks for not Closing " , Toast.LENGTH_LONG).show();
+                    }
+                })
+                .show();
 
     }
 }

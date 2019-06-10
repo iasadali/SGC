@@ -2,6 +2,7 @@ package com.sgc.fyp.sgc;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
@@ -18,6 +19,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -30,25 +32,46 @@ public class RegisterActivity extends AppCompatActivity {
     public static final String DISPLAY_NAME_KEY = "username";
 
     AnimationDrawable animationDrawable;
-    LinearLayout linearLayout;
-    private AutoCompleteTextView mEmailView;
-    private AutoCompleteTextView mUsernameView;
+    RelativeLayout mRelativeLayout;
+    private EditText mEmailView;
+    private EditText mUsernameView;
     private EditText mPasswordView;
     private EditText mConfirmPasswordView;
+    TextView lin,sup;
     // FireBase Instance Variables
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        linearLayout = findViewById(R.id.linearLayout);
-        animationDrawable = (AnimationDrawable) linearLayout.getBackground();
+        sup = (TextView) findViewById(R.id.sup);
+        lin = (TextView) findViewById(R.id.lin);
+        mUsernameView = (EditText) findViewById(R.id.usrusr);
+        mPasswordView = (EditText) findViewById(R.id.pswrdd);
+        mEmailView = (EditText) findViewById(R.id.mail);
+        mConfirmPasswordView = (EditText) findViewById(R.id.cpswd);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/LatoLight.ttf");
+        Typeface custom_font1 = Typeface.createFromAsset(getAssets(), "fonts/LatoRegular.ttf");
+        mConfirmPasswordView.setTypeface(custom_font);
+        sup.setTypeface(custom_font1);
+        mPasswordView.setTypeface(custom_font);
+        lin.setTypeface(custom_font);
+        mUsernameView.setTypeface(custom_font);
+        mEmailView.setTypeface(custom_font);
+        lin.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent it = new Intent(RegisterActivity.this,LoginActivity.class);
+                startActivity(it);
+                finish();
+            }
+        });
+        mRelativeLayout = findViewById(R.id.relativeLayout);
+        animationDrawable = (AnimationDrawable) mRelativeLayout.getBackground();
         animationDrawable.setEnterFadeDuration(5000);
         animationDrawable.setExitFadeDuration(2000);
-        mEmailView = findViewById(R.id.register_email);
-        mPasswordView = findViewById(R.id.register_password);
-        mConfirmPasswordView = findViewById(R.id.register_confirm_password);
-        mUsernameView = findViewById(R.id.register_username);
 
         // Keyboard sign in action
         mConfirmPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -80,6 +103,7 @@ public class RegisterActivity extends AppCompatActivity {
     public void signUp(View v) {
         attemptRegistration();
     }
+
     private void attemptRegistration() {
 
         // Reset errors displayed in the form.
@@ -155,6 +179,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
+                    Toast.makeText(RegisterActivity.this, "User has been Registered", Toast.LENGTH_SHORT).show();
 
                 }
 
