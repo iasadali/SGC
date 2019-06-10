@@ -14,17 +14,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.widget.Gallery;
 
-public class HomeActivity extends AppCompatActivity
+public class Help extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    DrawerLayout drawer;
-    NavigationView navigationView;
-    Toolbar toolbar = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_help);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -35,8 +32,8 @@ public class HomeActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
-        drawer = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -85,47 +82,47 @@ public class HomeActivity extends AppCompatActivity
         switch (id) {
 
             case R.id.nav_Home:
-                Intent h = new Intent(HomeActivity.this, HomeActivity.class);
+                Intent h = new Intent(Help.this, HomeActivity.class);
                 startActivity(h);
                 finish();
                 break;
             case R.id.nav_generator:
-                Intent i = new Intent(HomeActivity.this, QRCodeGenerator.class);
+                Intent i = new Intent(Help.this, QRCodeGenerator.class);
                 startActivity(i);
                 finish();
                 break;
             case R.id.nav_scanner:
-                Intent g = new Intent(HomeActivity.this, QRCodeScanner.class);
+                Intent g = new Intent(Help.this, QRCodeScanner.class);
                 startActivity(g);
                 finish();
                 break;
             case R.id.nav_gallery:
-                Intent s = new Intent(HomeActivity.this, HomeActivity.class);
+                Intent s = new Intent(Help.this, HomeActivity.class);
                 startActivity(s);
                 finish();
                 break;
             case R.id.nav_SignIn:
-                Intent t = new Intent(HomeActivity.this, LoginActivity.class);
+                Intent t = new Intent(Help.this, LoginActivity.class);
                 startActivity(t);
                 finish();
                 break;
             case R.id.nav_CreateAccount:
-                Intent u = new Intent(HomeActivity.this, RegisterActivity.class);
+                Intent u = new Intent(Help.this, RegisterActivity.class);
                 startActivity(u);
                 finish();
                 break;
             case R.id.nav_Exit:
-                Intent v = new Intent(HomeActivity.this, HomeActivity.class);
+                Intent v = new Intent(Help.this, HomeActivity.class);
                 startActivity(v);
                 finish();
                 break;
             case R.id.nav_help:
-                Intent w = new Intent(HomeActivity.this, Help.class);
+                Intent w = new Intent(Help.this, Help.class);
                 startActivity(w);
                 finish();
                 break;
             case R.id.nav_about:
-                Intent x = new Intent(HomeActivity.this, Aboutus.class);
+                Intent x = new Intent(Help.this, Aboutus.class);
                 startActivity(x);
                 finish();
                 break;

@@ -46,4 +46,17 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="qr_code_generator">QR Code Generator</string>
+    <string name="qr_code_scanner">QR Code Scanner</string>
+    <string name="help">Help</string>
+    <string name="about_us">About us</string>
+    <string name="help_and_support">Help and Support</string>
+    <string name="create_account">Create Account</string>
+    <string name="exit">Exit</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="home">Home</string>
+    <string name="title_activity_qrcode_generator">QR Code Generator</string>
+    <string name="title_activity_qrcode_scanner">QR Code Scanner</string>
+    <string name="title_activity_help">Help</string>
+    <string name="title_activity_aboutus">About us</string>
 </resources>
