@@ -61,6 +61,7 @@ public class HomeActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
+
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -102,10 +103,10 @@ public class HomeActivity extends AppCompatActivity
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new home_fragment()).commit();
                 break;
             case R.id.nav_generator:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new qrcodegenerator_fragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new qrcodegenerator_fragment()).addToBackStack(null).commit();
                 break;
             case R.id.nav_scanner:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new qrcodescanner_fragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new qrcodescanner_fragment()).addToBackStack(null).commit();
                 break;
             case R.id.nav_gallery:
                 Intent intent = new Intent();
@@ -144,15 +145,14 @@ public class HomeActivity extends AppCompatActivity
                         .show();
                 break;
             case R.id.nav_help:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new help_fragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new help_fragment()).addToBackStack(null).commit();
                 break;
             case R.id.nav_about:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new aboutus_fragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new aboutus_fragment()).addToBackStack(null).commit();
                 break;
         }
 
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 }

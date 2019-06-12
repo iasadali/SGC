@@ -38,7 +38,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/GenerateButton"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
@@ -48,7 +48,7 @@
                 android:src="@drawable/generatebtn" />
 
             <ImageButton
-                android:id="@+id/imageButton1"
+                android:id="@+id/ScanButton"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginStart="10dp"

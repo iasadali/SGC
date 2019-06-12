@@ -5,7 +5,7 @@
     <string name="error_field_required">This field is required</string>
     <string name="splash_image">splash_image</string>
     <string name="splash_title">Scan and Get Codes</string>
-    <string name="copyright">Copyright@2018</string>
+    <string name="copyright">Copyright@2019</string>
     <string name="generate_title">Generate</string>
     <string name="scan_title">Scan</string>
     <string name="scan_button">scan_button</string>
