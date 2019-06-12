@@ -40,4 +40,7 @@
     <string name="exit">Exit</string>
     <string name="home">Home</string>
     <string name="copy_right" translatable="false">Copyrights © %1$d</string>
+    <string name="account">Accounts</string>
+    <string name="welcome_note">Scan and Get Application Provides you the new way of data transferring offline through QR Codes. You can Generate Codes of Texts, Images, Audio and Video Files by tapping on Generate Button, Or you can Scan the Codes to Download Texts, Images, Audio and Video Files by tapping to Scan Button. Happy Sharing!</string>
+    <string name="welcome">Welcome!</string>
 </resources>

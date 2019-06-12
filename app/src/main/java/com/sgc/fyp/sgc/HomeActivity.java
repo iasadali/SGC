@@ -21,6 +21,8 @@ import android.view.Menu;
 import android.widget.Gallery;
 import android.widget.Toast;
 
+import java.io.File;
+
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawer;
@@ -106,9 +108,11 @@ public class HomeActivity extends AppCompatActivity
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new qrcodescanner_fragment()).commit();
                 break;
             case R.id.nav_gallery:
-                Intent s = new Intent(HomeActivity.this, HomeActivity.class);
-                startActivity(s);
-                finish();
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_VIEW );
+                final int SELECT_IMAGE= 1234;
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"),SELECT_IMAGE);
                 break;
             case R.id.nav_SignIn:
                 Intent t = new Intent(HomeActivity.this, LoginActivity.class);

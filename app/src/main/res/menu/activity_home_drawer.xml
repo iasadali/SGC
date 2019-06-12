@@ -17,37 +17,46 @@
             android:id="@+id/nav_scanner"
             android:icon="@drawable/scan_small"
             android:title="@string/qr_code_scanner" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
-            android:id="@+id/nav_SignIn"
-            android:icon="@drawable/signin_icon"
-            android:title="@string/common_signin_button_text" />
-        <item
-            android:id="@+id/nav_CreateAccount"
-            android:icon="@drawable/signup_icon"
-            android:title="@string/create_account" />
-        <item
-            android:id="@+id/nav_Exit"
-            android:icon="@drawable/exit_icon"
-            android:title="@string/exit" />
-
-
     </group>
+    <item
+        android:id="@+id/nav_gallery"
+        android:icon="@drawable/ic_menu_gallery"
+        android:title="@string/menu_gallery" />
+
+
+    <item android:title="@string/account">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_SignIn"
+                    android:icon="@drawable/signin_icon"
+                    android:title="@string/common_signin_button_text" />
+                <item
+                    android:id="@+id/nav_CreateAccount"
+                    android:icon="@drawable/signup_icon"
+                    android:title="@string/create_account" />
+            </group>
+
+        </menu>
+    </item>
 
     <item android:title="@string/help_and_support">
         <menu>
-
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_help"
+                    android:icon="@drawable/help_icon"
+                    android:title="@string/help" />
+                <item
+                    android:id="@+id/nav_about"
+                    android:icon="@drawable/about_icon"
+                    android:title="@string/about_us" />
+            </group>
             <item
-                android:id="@+id/nav_help"
-                android:icon="@drawable/help_icon"
-                android:title="@string/help" />
-            <item
-                android:id="@+id/nav_about"
-                android:icon="@drawable/about_icon"
-                android:title="@string/about_us" />
+                android:id="@+id/nav_Exit"
+                android:icon="@drawable/exit_icon"
+                android:title="@string/exit" />
         </menu>
+
     </item>
 </menu>

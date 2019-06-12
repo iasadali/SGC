@@ -12,7 +12,8 @@
         <activity
             android:name=".HomeActivity"
             android:label="SGC"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,11 +24,6 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -39,7 +35,13 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".SplashActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait">
+        <intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+
+            <action android:name="android.intent.action.MAIN" />
+        </intent-filter>
+        </activity>
         <activity android:name=".GenerateActivity" />
         <activity android:name=".ScanActivity" />
         <activity android:name=".PlaintextActivity" />
