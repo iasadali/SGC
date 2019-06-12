@@ -2,13 +2,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/about_About.wrapper">
 
+
     <LinearLayout style="@style/about_About.wrapper">
 
-        <LinearLayout style="@style/about_sub_wrapper">
+        <ImageView
+            android:id="@+id/image"
+            style="@style/about_image" />
 
-            <ImageView
-                android:id="@+id/image"
-                style="@style/about_image" />
+        <LinearLayout style="@style/about_sub_wrapper">
 
             <TextView
                 android:id="@+id/description"
