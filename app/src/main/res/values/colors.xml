@@ -9,4 +9,5 @@
     <color name="light_green">#76cc97</color>
     <color name="grey">#2f2f30</color>
     <color name="light_grey">#505254</color>
+    <color name="hintcolor">#a3a5a8</color>
 </resources>
