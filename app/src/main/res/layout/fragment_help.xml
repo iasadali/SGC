@@ -1,15 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/bg">
 
-
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/faqs"/>
-</LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="How to Generate QR Codes?"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\u25CF To Generate Plaintext QR Code, Run the App and from Home Screen tap to Generate Button or goto Navigation Drawer and tap to 'Generate QR Codes', then the plaintext qr code generator screen will be visible automatically. Now enter text and tap generate button to get qr code. Now, you can save this qrcode by tapping on save button.  "
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\u25CF To Generate Image QR Code, Run the App and from Home Screen tap to Generate Button or goto Navigation Drawer and tap to 'Generate QR Codes', then the plaintext qr code generator screen will be visible automatically. Now Swipe right to get on the image qr code generator screen, tap on browse button to get an image which you want to convert to QR Code. Press Generate to generate QR code.Now, you can save this qrcode by tapping on save button.  "
+                android:textColor="@color/black"
+                android:paddingTop="10dp"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\u25CF To Generate Audio QR Code, Run the App and from Home Screen tap to Generate Button or goto Navigation Drawer and tap to 'Generate QR Codes', then the plaintext qr code generator screen will be visible automatically. Now Swipe right twice to get on the Audio qr code generator screen, tap on browse button to get an audio which you want to convert to QR Code. Press Generate to generate QR code.Now, you can save this qrcode by tapping on save button.  "
+                android:paddingTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\u25CF To Generate Video QR Code, Run the App and from Home Screen tap to Generate Button or goto Navigation Drawer and tap to 'Generate QR Codes', then the plaintext qr code generator screen will be visible automatically. Now Swipe right thrice to get on the Video qr code generator screen, tap on browse button to get a Video which you want to convert to QR Code. Press Generate to generate QR code.Now, you can save this qrcode by tapping on save button.  "
+                android:paddingTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="How to Scan QR Codes?"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\u25CF To Scan Plaintext QR Code, Run the App and from Home Screen tap to Scan Button or goto Navigation Drawer and tap to 'Scan QR Codes', then the plaintext qr code scanner screen will be visible automatically.Now Press scan button to scan qr code.You can save the file by tapping on save button.  "
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\u25CF To Scan Image QR Code, Run the App and from Home Screen tap to Scan Button or goto Navigation Drawer and tap to 'Scan QR Codes', then the plaintext qr code generator screen will be visible automatically. Now Swipe right to get on the image qr code scanner screen, Now Press scan button to scan qr code.You can save the file by tapping on save button. "
+                android:paddingTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\u25CF To Scan Audio QR Code, Run the App and from Home Screen tap to Scan Button or goto Navigation Drawer and tap to 'Scan QR Codes', then the plaintext qr code generator screen will be visible automatically. Now Swipe right twice, to get on the audio qr code scanner screen, Now Press scan button to scan qr code.You can save the file by tapping on save button. "
+                android:paddingTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\u25CF To Scan Video QR Code, Run the App and from Home Screen tap to Scan Button or goto Navigation Drawer and tap to 'Scan QR Codes', then the plaintext qr code generator screen will be visible automatically. Now Swipe right thrice, to get on the video qr code scanner screen, Now Press scan button to scan qr code.You can save the file by tapping on save button. "
+                android:paddingTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
+</ScrollView>
